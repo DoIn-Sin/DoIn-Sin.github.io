@@ -7,8 +7,8 @@
 title: D-log
 subtitle: 배움을 즐기는 데이터 엔지니어
 description: 
-author: DoIn Sin
-# Support language: en, ko
+author: 신도인
+Support language: en, ko
 language: en
 date_format: '%Y-%m-%d'
 
@@ -93,7 +93,7 @@ rss:
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 # ---------------------------------------------------------------
 # SEO Settings
