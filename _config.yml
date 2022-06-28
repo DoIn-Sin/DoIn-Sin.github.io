@@ -241,10 +241,10 @@ toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: false
+  number: true
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: true
+  wrap: false
 
 
 # Creative Commons 4.0 International License.
@@ -280,7 +280,7 @@ sidebar:
   scrollpercent: true
 
 
-Blog rolls
+# Blog rolls
 links_title: Links
 links_layout: block
 links_layout: inline
