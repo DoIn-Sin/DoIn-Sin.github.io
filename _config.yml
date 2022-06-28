@@ -233,8 +233,7 @@ social_icons:
 
 
 # Sidebar Avatar
-# in directory: /assets/images/avatar_doin.png
-# avatar:
+avatar: /assets/images/avatar_doin.jpg
 
 
 # Table Of Contents in the Sidebar
@@ -245,7 +244,7 @@ toc:
   number: false
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: true
+  wrap: false
 
 
 # Creative Commons 4.0 International License.
@@ -281,7 +280,7 @@ sidebar:
   scrollpercent: true
 
 
-Blog rolls
+# Blog rolls
 links_title: Links
 links_layout: block
 links_layout: inline
