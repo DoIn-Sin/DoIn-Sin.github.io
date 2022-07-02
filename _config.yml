@@ -2,6 +2,8 @@
 # Jekyll & Global Configuration
 ## Docs: https://jekyllrb.com/docs/configuration/
 # ---------------------------------------------------------------
+# 현재 시간 보다 미래 시간의 포스팅을 적용
+future: true
 
 # Site
 title: D-log
