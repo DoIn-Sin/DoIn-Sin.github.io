@@ -415,7 +415,7 @@ def display_info(name, age):
 display_info('John', 25)  # 3
 
 """
-display_info(Jimmy, 30) 함수가 실행됐습니다.
+display_info(John, 25) 함수가 실행됐습니다.
 display_info 함수가 실행된 총 시간: 1.013833999633789 초
 
 - 로그 파일 안
