@@ -18,6 +18,39 @@ tags:
 그래서 하이퍼파라미터를 조정하기 위해서 로지스틱회귀가 학습하는 방법에 대해 다시 복습하고, 각 하이퍼파라미터가 어떤 의미를 내포하고 있는지 간략하게 알아봤다.
 
 >Logistic Regression Hypterparameter
+1. penalty: 제약조건(규제)를 설정 (default=l2)
+    - none: 규제를 지정하지 않음
+    - l2: L2 규제를 가함
+    - l1: L1 규제를 가함
+    - elasticnet: L1과 L2를 적절히 가함
+    - solver 함수가 지원하는 규제를 잘 보고 지정해야 함
+2. dual: 이중 또는 초기 공식(?) (default=False)
+    - solver로 liblinear를 사용하고, l2 규제에 대해서만 사용됨. 
+    - n_samples  > n_features일 때 dual=False로 설정하길 권장함.
+3. tol: 계산 시 정지 기준에 대한 공차 (default=1e-4)
+4. C: cost function, L1 또는 L2 제약조건의 강도를 설정, (default=1)
+    - 높을 수록 낮은 강도의 제약조건이 설정되어 계산된 기울기가 데이터들 쪽으로 치우치게 되고,
+    - 낮을 수록 높은 강도의 제약조건이 설정되어 0쪽으로 붙잡히게 된다.
+5. fit_intercept: 정규화 효과 정도
+6. class_weight : 데이터에 직접 가중치를 설정하여 학습의 강도를 다르게 함 (default-None)
+7. random_state: 난수 seed 설정 (default=None)
+8. solver: 최적화에 사용할 알고리즘 방식 (default-lbfgs)
+    - liblinear: L1, L2 제약조건 두 가지를 모두 지원, 크기가 작은 데이터에 적합하다.
+    - sag, saga: 확률적경사하강법을 기반으로 하기 때문에 대용량 데이터에 적합
+        - sag는 L1 제약조건만을 지원하고, saga는 L1, L2 둘 다 지원함
+    - newton-cg, lbfgs: 멀티클래스 분류에 사용하고, 성능은 lbfgs가 더 낫다고 한다. L2 제약조건만 지원함
+9. max_iter: 해를 찾아가는 데 있어서 연산을 반복하는 횟수 (무한루프 방지용) (default=100)
+    - 대게 전처리가 잘 되어있지 않으면 연산을 반복하는 횟수가 많아져서 max_iter가 모자라다는 에러가 발생하곤 한다고 함.
+10. multi_class: 다중 분류의 경우 설정 (default=’auto’)
+11. verbose : 동작 과정에 대한 출력 메시지 (default=0)
+12. warm_start : 이전 모델을 초기화로 적합하게 사용할 것인지 여부(?) (default=False)
+13. n_jobs : 병렬 처리 할 때 사용되는 CPU 코어 수 (default=None)
+14. l1_ratio : L1 규제의 비율(Elastic-Net 믹싱 파라미터 경우에만 사용) (default=None)
+
+지이ㄴ이이이ㅣㅣㄴ짜 많다..!!! 이걸 다 외우냐고? 아니지ㅋㅎ
+여기서 내가 설정할 하이퍼파라미터는 max_iter(무한루프 방지용), C, solver, class_weight, random_state 이다!
+
+로지스틱 회귀가 회귀선을 기준으로 분류하여 확률을 계산해내기 때문에 규제의 강도를 결정하는 C가 중요하다고 생가했고, class_weight도 학습 시 중요하다고 생각되어서 결정했다. solver는 데이터의 수가 적기 때문에 liblinear를 사용할 예정이고, 이에 따라 penalty는 default인 L2를 그대로 사용하게 될 것이다. 또한, 일정한 결과를 내기 위해 random_state는 42로 둘 것이고, max_iter는 가서 해봐야 알 것 같다..!
 
 그리고 이것들을 기반으로 C와 class_weight을 중점으로 GridSeachCV를 사용했는데, 초심자라 잘 모르다보니 범위 지정도 어렵고, 성능이 점점 안 좋아지는 것을 느꼈다ㅠ.. RandomSearchCV를 써도 적정 범위를 잘 모르니 마찬가지였다.
 
