@@ -1,5 +1,5 @@
 ---
-title: 캐글로 배운느 데이터 전처리
+title: 캐글로 배우는 데이터 전처리
 description: kaggle의 Porto Seguro's Safe Driver를 공부하면서 배운 상황에 따른 전처리 기법을 정리했습니다.
 categories:
 - Data Preprocessing
