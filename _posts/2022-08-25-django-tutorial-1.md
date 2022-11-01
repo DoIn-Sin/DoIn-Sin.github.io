@@ -6,6 +6,8 @@ categories:
 - Web Framework
 tags: 
 - Django
+
+published : false
 ---
 
 # 주저리 주저리..
