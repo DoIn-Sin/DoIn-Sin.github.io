@@ -6,6 +6,8 @@ categories:
 - Web Framework
 tags: 
 - Django
+
+published : false
 ---
 
 # 데이터베이스 설치하기
