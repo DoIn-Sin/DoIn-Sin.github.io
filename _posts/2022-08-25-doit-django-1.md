@@ -1,5 +1,5 @@
 ---
-title: Django 겉할기 시리즈 - Django 구조 이해하고 프로젝트 생성하기
+title: Django 겉핥기 시리즈 - Django 구조 이해하고 프로젝트 생성하기
 description: 이지스 퍼블리싱의 Do it! Django + 부트스트랩책을 보며 공부한 내용을 정리했습니다.
 categories:
 - Django
